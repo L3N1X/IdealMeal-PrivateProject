@@ -1,0 +1,36 @@
+﻿using DataLayer.Constants;
+using DataLayer.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Test
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Nutrition pecivo_nutrition = new Nutrition() { Calories = 100};
+            Nutrition pekmez_nutrition = new Nutrition() { Calories = 50 };
+
+            Grocery pecivo = new Grocery("pecivo", "mlinar", pecivo_nutrition);
+            Grocery pekmez = new Grocery("pekmez", "julius", pekmez_nutrition);
+
+            //Recept
+            Ingridient sastojak_pecivo = new Ingridient(pecivo, Unit.g, 250);
+            Ingridient sastojak_pekmez = new Ingridient(pekmez, Unit.g, 25);
+            Recepie rein_sendvic = new Recepie("rein senvdic", "fini", new List<Ingridient>{ sastojak_pekmez, sastojak_pecivo });
+            //Recept
+
+            //Privremeni recept
+            Ingridient moje_pecivo = new Ingridient(pecivo, Unit.g, 250);
+            Ingridient moj_pekmez = new Ingridient(pekmez, Unit.g, 50);
+            Recepie moj_sendvic = new Recepie("leonov senvdic", "nije fin", new List<Ingridient> { moje_pecivo, moj_pekmez });
+            //Privremeni recept
+
+            Console.WriteLine(moj_sendvic.CanMake(rein_sendvic));
+        }
+    }
+}
