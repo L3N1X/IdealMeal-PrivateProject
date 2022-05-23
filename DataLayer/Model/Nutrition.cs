@@ -23,6 +23,21 @@ namespace DataLayer.Model
         public double GetPercentageOfDailyIntake()
             => this.Calories / Nutrition.RecomendedDailyIntake;
 
+        public static Nutrition operator +(Nutrition left, Nutrition right)
+        {
+            return new Nutrition
+            {
+                Calories =      left.Calories + right.Calories,
+                Fat =           left.Fat + right.Fat,
+                Carbs =         left.Carbs + right.Carbs,
+                Protein =       left.Protein + right.Protein,
+                Cholesterol =   left.Cholesterol + right.Cholesterol,
+                Sodium =        left.Sodium + right.Sodium,
+                Calcium =       left.Calcium + right.Calcium,
+                Iron =          left.Iron + right.Iron
+            };
+        }
+
         public override string ToString()
             =>  $"Calories: {this.Calories}" +
                 $" Fat: {this.Fat}{MEASURING_UNIT}" +
@@ -35,27 +50,27 @@ namespace DataLayer.Model
 
         public string FormatForFileLine()
             => $"{this.Calories}{DEL}" +
-                $"{this.Fat}{MEASURING_UNIT}{DEL}" +
-                $"{this.Carbs}{MEASURING_UNIT}{DEL}" +
-                $"{this.Protein}{MEASURING_UNIT}{DEL}" +
-                $"{this.Cholesterol}{MEASURING_UNIT}{DEL}" +
-                $"{this.Sodium}{MEASURING_UNIT}{DEL}" +
-                $"{this.Calcium}{MEASURING_UNIT} {DEL}" +
-                $"{this.Iron}{MEASURING_UNIT}";
+                $"{this.Fat}{DEL}" +
+                $"{this.Carbs}{DEL}" +
+                $"{this.Protein}{DEL}" +
+                $"{this.Cholesterol}{DEL}" +
+                $"{this.Sodium}{DEL}" +
+                $"{this.Calcium}{DEL}" +
+                $"{this.Iron}";
 
         public static Nutrition ParseFromFileLine(string line)
         {
             string[] data = line.Split(DEL);
             return new Nutrition
             {
-                Calories = double.Parse(data[1]),
-                Fat = double.Parse(data[2]),
-                Carbs = double.Parse(data[3]),
-                Protein = double.Parse(data[4]),
-                Cholesterol = double.Parse(data[5]),
-                Sodium = double.Parse(data[6]),
-                Calcium = double.Parse(data[7]),
-                Iron = double.Parse(data[8]),
+                Calories = double.Parse(data[0]),
+                Fat = double.Parse(data[1]),
+                Carbs = double.Parse(data[2]),
+                Protein = double.Parse(data[3]),
+                Cholesterol = double.Parse(data[4]),
+                Sodium = double.Parse(data[5]),
+                Calcium = double.Parse(data[6]),
+                Iron = double.Parse(data[7]),
             };
         }
     }

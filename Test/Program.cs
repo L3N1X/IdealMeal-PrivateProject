@@ -1,8 +1,12 @@
-﻿using DataLayer.Constants;
+﻿using DataLayer;
+using DataLayer.Constants;
 using DataLayer.Model;
+using DataLayer.Repositories.Factories;
+using DataLayer.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,6 +34,10 @@ namespace Test
             //Privremeni recept
 
             Console.WriteLine(rein_sendvic.CanMakeWithGivenIngridients(new List<Ingridient> { moje_pecivo, moj_pekmez }));
+
+            Irepo repo = RepoFactory.GetRepo();
+            var recepie = repo.GetRecepies()[0];
+            Console.WriteLine($"{recepie.Name} Calories: {recepie.Nutrition.Calories}");
         }
     }
 }

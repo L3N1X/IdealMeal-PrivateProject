@@ -13,6 +13,16 @@ namespace DataLayer.Model
         public string Name { get; private set; }
         public string Description { get; private set; }
         public IList<Ingridient> Ingridients { get; private set; } //SET?
+        public Nutrition Nutrition 
+        {
+            get
+            {
+                var totalNutrition = new Nutrition();
+                foreach (var ingridient in Ingridients)
+                    totalNutrition = totalNutrition + ingridient.Grocery.Nutrition;
+                return totalNutrition;
+            } 
+        }
         public Recepie(string name, string description, IList<Ingridient> ingridients)
         {
             this.Name = name;

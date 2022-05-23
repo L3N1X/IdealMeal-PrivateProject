@@ -10,8 +10,12 @@ namespace DataLayer.Repositories.Interfaces
     public interface Irepo
     {
         IList<Grocery> GetGroceries();
+        void CreateGrocery(Grocery grocery);
+        void DeleteGrocery(Grocery grocery);
         IList<Recepie> GetRecepies();
         void CreateRecepie(Recepie recepie);
         void DeleteRecepie(Recepie recepie);
+        IList<AdminUser> GetAdminUsers();
+        AdminUser AuthAdminUser(string username, string password);
     }
 }

@@ -41,18 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Constants\MeasuringUnits.cs" />
+    <Compile Include="Cryptography.cs" />
     <Compile Include="Model\Grocery.cs" />
     <Compile Include="Model\Ingridient.cs" />
     <Compile Include="Model\Nutrition.cs" />
     <Compile Include="Model\Recepie.cs" />
+    <Compile Include="Model\AdminUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Factories\RepoFactory.cs" />
+    <Compile Include="Repositories\Implementations\FileRepo.cs" />
     <Compile Include="Repositories\Interfaces\Irepo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\Factories\" />
-    <Folder Include="Repositories\Implementations\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
