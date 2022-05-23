@@ -20,14 +20,15 @@ namespace DataLayer.Model
             this.Ingridients = ingridients;
         }
 
-        public bool CanMake(Recepie other)
+        public bool CanMakeWithGivenIngridients(IList<Ingridient> avaliableIngridients)
         {
             int ingridentsValid = 0;
-            foreach (var thisIngridient in this.Ingridients)
+            foreach (var ingridient in this.Ingridients)
             {
-                foreach (var otherIngrident in other.Ingridients)
+                foreach (var avaliableIngridient in avaliableIngridients)
                 {
-                    if(thisIngridient.HasEnoughFor(otherIngrident))
+                    if (ingridient.Equals(avaliableIngridient) 
+                        && ingridient.Amount <= avaliableIngridient.Amount)
                         ingridentsValid++;
                 }
             }

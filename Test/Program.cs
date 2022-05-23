@@ -23,14 +23,13 @@ namespace Test
             Ingridient sastojak_pekmez = new Ingridient(pekmez, Unit.g, 25);
             Recepie rein_sendvic = new Recepie("rein senvdic", "fini", new List<Ingridient>{ sastojak_pekmez, sastojak_pecivo });
             //Recept
-
+               
             //Privremeni recept
             Ingridient moje_pecivo = new Ingridient(pecivo, Unit.g, 250);
             Ingridient moj_pekmez = new Ingridient(pekmez, Unit.g, 50);
-            Recepie moj_sendvic = new Recepie("leonov senvdic", "nije fin", new List<Ingridient> { moje_pecivo, moj_pekmez });
             //Privremeni recept
 
-            Console.WriteLine(moj_sendvic.CanMake(rein_sendvic));
+            Console.WriteLine(rein_sendvic.CanMakeWithGivenIngridients(new List<Ingridient> { moje_pecivo, moj_pekmez }));
         }
     }
 }

@@ -20,9 +20,6 @@ namespace DataLayer.Model
             this.Amount = amount;
         }
 
-        public bool HasEnoughFor(Ingridient target)
-            => this.Equals(target) && this.Amount >= target.Amount;
-
         public string FormatForFileLine()
             => $"{this.Grocery.FormatForFileLine()}{DEL}" +
             $"{this.Unit}{DEL}" +
