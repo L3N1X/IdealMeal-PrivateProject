@@ -13,6 +13,7 @@ namespace DataLayer.Model
         public string Name { get; private set; }
         public string Description { get; private set; }
         public IList<Ingridient> Ingridients { get; private set; } //SET?
+        public string ImagePath { get; set; } = string.Empty;
         public Nutrition Nutrition 
         {
             get
@@ -52,6 +53,8 @@ namespace DataLayer.Model
                 .Append(this.Name)
                 .Append(DEL)
                 .Append(this.Description)
+                .Append(DEL)
+                .Append(this.ImagePath)
                 .Append(DEL);
             foreach (var ingridient in this.Ingridients)
             {
@@ -67,8 +70,9 @@ namespace DataLayer.Model
         {
             string[] data = line.Split(DEL);
             string name = data[0];
-            string description = data[1]; 
-            string[] ingridentsData = data[2].Split(INGRIDIENTS_LIST_DEL);
+            string description = data[1];
+            string imagePath = data[2];
+            string[] ingridentsData = data[3].Split(INGRIDIENTS_LIST_DEL);
             IList<Ingridient> ingridients = new List<Ingridient>();
 
             foreach (var ingridientRaw in ingridentsData)

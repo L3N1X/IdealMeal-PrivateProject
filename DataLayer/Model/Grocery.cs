@@ -12,6 +12,8 @@ namespace DataLayer.Model
         public string Name { get; private set; }
         public string Description { get; private set; }
         public Nutrition Nutrition { get; private set; }
+
+        public string ImagePath { get; set; } = string.Empty;
         public Grocery(string name, string description, Nutrition nutrition)
         {
             this.Nutrition = nutrition;
@@ -22,12 +24,15 @@ namespace DataLayer.Model
         public string FormatForFileLine()
             => $"{this.Name}{DEL}" +
             $"{this.Description}{DEL}" +
+            $"{this.ImagePath}{DEL}"+
             $"{this.Nutrition.FormatForFileLine()}";
 
         public static Grocery ParseFromFileLine(string line)
         {
             string[] data = line.Split(DEL);
-            return new Grocery(data[0], data[1], Nutrition.ParseFromFileLine(data[2]));
+            Grocery grocery = new Grocery(name: data[0], description: data[1], nutrition: Nutrition.ParseFromFileLine(data[3]));
+            grocery.ImagePath = data[2];
+            return grocery;
         }
 
         public override bool Equals(object obj)

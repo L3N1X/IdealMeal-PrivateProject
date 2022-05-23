@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Constants\MeasuringUnits.cs" />
     <Compile Include="Cryptography.cs" />
+    <Compile Include="DataManager.cs" />
     <Compile Include="Model\Grocery.cs" />
     <Compile Include="Model\Ingridient.cs" />
     <Compile Include="Model\Nutrition.cs" />

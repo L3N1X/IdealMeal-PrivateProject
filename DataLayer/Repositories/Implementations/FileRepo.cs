@@ -30,6 +30,26 @@ namespace DataLayer.Repositories.Implementations
                 File.Create(GROCERIES_PATH);
             if (!File.Exists(RECEPIES_PATH))
                 File.Create(RECEPIES_PATH);
+            CreateMissingGroceriesFromRecepies();
+        }
+        public void CreateMissingGroceriesFromRecepies()
+        {
+            var recepies = this.GetRecepies();
+            var groceries = this.GetGroceries();
+            foreach (var recepie in recepies)
+            {
+                foreach (var ingridient in recepie.Ingridients)
+                {
+                    try
+                    {
+                        this.CreateGrocery(ingridient.Grocery);
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
+                }
+            }
         }
         public IList<AdminUser> GetAdminUsers()
         {
@@ -45,8 +65,10 @@ namespace DataLayer.Repositories.Implementations
         public IList<Recepie> GetRecepies()
         {
             string[] lines = File.ReadAllLines(RECEPIES_PATH);
-            return lines.ToList().Select(line => Recepie.ParseFromFileLine(line)).ToList();
+            var recepies =  lines.ToList().Select(line => Recepie.ParseFromFileLine(line)).ToList();
+            return recepies;
         }
+
         public void CreateRecepie(Recepie recepie)
         {
             var recepies = this.GetRecepies();
