@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblCalories = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.pbGrocery = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cmsGrocery = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toggleGroceryOption = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
@@ -53,6 +53,16 @@
             this.groupBox1.Size = new System.Drawing.Size(194, 201);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(74, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "kcal/100g";
             // 
             // lblCalories
             // 
@@ -80,32 +90,22 @@
             this.pbGrocery.Image = global::IdealMeal_WinForms.Images.groceries;
             this.pbGrocery.Location = new System.Drawing.Point(35, 14);
             this.pbGrocery.Name = "pbGrocery";
-            this.pbGrocery.Size = new System.Drawing.Size(120, 136);
+            this.pbGrocery.Size = new System.Drawing.Size(120, 120);
             this.pbGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbGrocery.TabIndex = 0;
             this.pbGrocery.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 184);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "kcal/100g";
             // 
             // cmsGrocery
             // 
             this.cmsGrocery.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toggleGroceryOption});
             this.cmsGrocery.Name = "cmsGrocery";
-            this.cmsGrocery.Size = new System.Drawing.Size(181, 48);
+            this.cmsGrocery.Size = new System.Drawing.Size(163, 26);
             // 
             // toggleGroceryOption
             // 
             this.toggleGroceryOption.Name = "toggleGroceryOption";
-            this.toggleGroceryOption.Size = new System.Drawing.Size(180, 22);
+            this.toggleGroceryOption.Size = new System.Drawing.Size(162, 22);
             this.toggleGroceryOption.Text = "Dodaj namrinicu";
             this.toggleGroceryOption.Click += new System.EventHandler(this.toggleGroceryOption_Click);
             // 
