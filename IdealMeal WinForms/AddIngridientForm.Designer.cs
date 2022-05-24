@@ -72,7 +72,7 @@
             this.cmsIngridient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeIngridientOption});
             this.cmsIngridient.Name = "cmsIngridient";
-            this.cmsIngridient.Size = new System.Drawing.Size(181, 48);
+            this.cmsIngridient.Size = new System.Drawing.Size(121, 26);
             // 
             // removeIngridientOption
             // 
@@ -90,6 +90,7 @@
             this.Controls.Add(this.txtAmount);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AddIngridientForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodaj sastojak";
             this.Load += new System.EventHandler(this.AddIngridientForm_Load);
             this.cmsIngridient.ResumeLayout(false);

@@ -92,12 +92,18 @@ namespace IdealMeal_WinForms
             try
             {
                 dataManager.CreateGrocery(dialog.Grocery);
-                this.ResetGroceriesPanel();
+                this.flpGroceries.Controls.Add(new GroceryControl(dialog.Grocery));
+                //this.ResetGroceriesPanel();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void MainTab_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

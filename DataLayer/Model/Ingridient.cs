@@ -13,13 +13,13 @@ namespace DataLayer.Model
 
         public Grocery Grocery { get; private set; }
         public double Amount { get => amount; set => amount = value; }
-        private Nutrition nutrition;
+        //private Nutrition nutrition;
         public Nutrition Nutrition
         {
             get
             {
                 double hundreth = amount / 100.0;
-                return nutrition * hundreth;
+                return Grocery.Nutrition * hundreth;
             }
         }
         public Ingridient(Grocery grocery, double amount)

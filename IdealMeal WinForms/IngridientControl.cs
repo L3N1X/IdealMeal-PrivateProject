@@ -31,9 +31,9 @@ namespace IdealMeal_WinForms
             Tools.CenterControlInParentHorizontally(this.lblAmount);
             Tools.CenterControlInParentHorizontally(this.lblCalories);
 
-            this.lblFat.Text = this.Ingridient.Nutrition.Fat.ToString() + "g";
-            this.lblProtein.Text = this.Ingridient.Nutrition.Protein.ToString() + "g";
-            this.lblCarbs.Text = this.Ingridient.Nutrition.Carbs.ToString() + "g";
+            this.lblFat.Text = "Masnoće: " + this.Ingridient.Nutrition.Fat.ToString() + "g";
+            this.lblProtein.Text = "Bjelančevine: " + this.Ingridient.Nutrition.Protein.ToString() + "g";
+            this.lblCarbs.Text = "Ugljikohidrati: " + this.Ingridient.Nutrition.Carbs.ToString() + "g";
         }
     }
 }

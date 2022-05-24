@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbGrocery = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblGrocery = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,48 +38,40 @@
             this.lblFat = new System.Windows.Forms.Label();
             this.lblProtein = new System.Windows.Forms.Label();
             this.lblCarbs = new System.Windows.Forms.Label();
+            this.pbGrocery = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrocery)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrocery)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(2, 1);
+            this.groupBox1.Location = new System.Drawing.Point(2, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(294, 193);
+            this.groupBox1.Size = new System.Drawing.Size(294, 194);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // pbGrocery
-            // 
-            this.pbGrocery.Image = global::IdealMeal_WinForms.Images.groceries;
-            this.pbGrocery.Location = new System.Drawing.Point(20, 18);
-            this.pbGrocery.Name = "pbGrocery";
-            this.pbGrocery.Size = new System.Drawing.Size(120, 129);
-            this.pbGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGrocery.TabIndex = 0;
-            this.pbGrocery.TabStop = false;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblGrocery);
             this.groupBox2.Controls.Add(this.pbGrocery);
-            this.groupBox2.Location = new System.Drawing.Point(6, 14);
+            this.groupBox2.Location = new System.Drawing.Point(10, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(165, 185);
+            this.groupBox2.Size = new System.Drawing.Size(165, 170);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // lblGrocery
             // 
             this.lblGrocery.AutoSize = true;
-            this.lblGrocery.Location = new System.Drawing.Point(37, 155);
+            this.lblGrocery.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrocery.Location = new System.Drawing.Point(37, 149);
             this.lblGrocery.Name = "lblGrocery";
-            this.lblGrocery.Size = new System.Drawing.Size(87, 14);
+            this.lblGrocery.Size = new System.Drawing.Size(93, 16);
             this.lblGrocery.TabIndex = 1;
             this.lblGrocery.Text = "GROCERYNAME";
             // 
@@ -154,21 +145,32 @@
             this.lblCarbs.TabIndex = 5;
             this.lblCarbs.Text = "Ugljikohidrati: 0g";
             // 
+            // pbGrocery
+            // 
+            this.pbGrocery.Image = global::IdealMeal_WinForms.Images.groceries;
+            this.pbGrocery.Location = new System.Drawing.Point(20, 18);
+            this.pbGrocery.Name = "pbGrocery";
+            this.pbGrocery.Size = new System.Drawing.Size(120, 129);
+            this.pbGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGrocery.TabIndex = 0;
+            this.pbGrocery.TabStop = false;
+            // 
             // IngridientControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "IngridientControl";
             this.Size = new System.Drawing.Size(300, 200);
             this.Load += new System.EventHandler(this.IngridientControl_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrocery)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrocery)).EndInit();
             this.ResumeLayout(false);
 
         }
