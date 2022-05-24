@@ -130,9 +130,9 @@
             this.groupBox1.Controls.Add(this.flpHomeGroceries);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.IndianRed;
-            this.groupBox1.Location = new System.Drawing.Point(10, 293);
+            this.groupBox1.Location = new System.Drawing.Point(10, 290);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1176, 258);
+            this.groupBox1.Size = new System.Drawing.Size(1176, 261);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Moje namrinice";
@@ -141,10 +141,10 @@
             // 
             this.flpHomeGroceries.AutoScroll = true;
             this.flpHomeGroceries.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flpHomeGroceries.Location = new System.Drawing.Point(6, 37);
+            this.flpHomeGroceries.Location = new System.Drawing.Point(6, 25);
             this.flpHomeGroceries.Name = "flpHomeGroceries";
             this.flpHomeGroceries.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flpHomeGroceries.Size = new System.Drawing.Size(1154, 209);
+            this.flpHomeGroceries.Size = new System.Drawing.Size(1154, 230);
             this.flpHomeGroceries.TabIndex = 1;
             this.flpHomeGroceries.WrapContents = false;
             // 
@@ -203,7 +203,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.IndianRed;
             this.groupBox2.Location = new System.Drawing.Point(308, 18);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1060, 277);
+            this.groupBox2.Size = new System.Drawing.Size(1060, 266);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recepti";
