@@ -1,4 +1,11 @@
 ﻿/*
+ * 
+
+
+Vrlo bih rado da mogu ovaj projekt još jednostavnije napraviti, ali to nije moguće bez da više uopce nije on ošto ste napisale u opisu projekta.
+Sada je on okvirno ono sto ste napisali, od nekih stvari ste odustale jer su pak previse komplicirane, tipa tjedni plan prehrane i sl.
+
+
 Ono što trebate znati:
 Ja sam netko kog poznajete i trazile ste moju pomoc. zezule ste se sa odabirom teme koja je dosta kompleksna
 Ja sam vam pokazao kako da napravite ove stvari.
@@ -41,7 +48,7 @@ Taj label vjerojatno izgleda ovako nekako:
     public class Label
     {
         public int KoordinataX { get; set; }
-        ...y
+        ...y....
         ... neke druge stvari ...
                     ....
         public string Text { get; set; }
@@ -115,7 +122,40 @@ ljudi.Add(c3);
 Kako sada pristupamo covjeku c1? on je na pocetku liste jer smo ga stavili prvog. To radimo tako da kazemo ljudi[0]
 Sve u programiranju počinje od 0, ne od 1.
 
-Imamo sada te ljude i na ekran na labeli želimo 
+Imamo sada te ljude i na ekran na labeli želimo ispisati ime druge osobe u listi.
+
+label1.Text = ljudi[1].Ime;
+
+Kako prolazimo kroz listu (trčimo kroz listu)
+
+foreach(Covjek covjek in ljudi) -> ovako sada pristupamo SVAKOM COVJEKU po redu
+{
+    
+}
+
+Ajmo zbrojiti godine svih ljudi!
+
+int ukupne_godine = 0;
+foreach(Covjek covjek in ljudi)
+{
+    ukupne_godine = ukupne_godine + covjek.Starost;
+}
+
+label1.Text = ukupne_godine.ToString();
+
+Sada smo ispisali ukupne godine na ekran, zašto ToString()? svaki objekt, pa cak int, double i sl (brojevi) imaju svoju tekstualnu reprezentaciju, njoj pristupamo tako da samo pozovemo .ToString();
+
+Kako ispisemo broj 100?
+
+label1.Text = 100; -> KRIVO!!! ovo ce biti crveno potcrtano, vrijednost Text u klasi Label je tipa string, ne možemo joj dodjeliti sada nešto sto je tipa int (100 je int).
+label1.Text = "100" -> ovako sada možemo, ali mi trebamo znati kako se piše 100. Što ako je to neki broj koji je izračunao program? Da zna ispisati bilo koji broj?
+To radimo kao kako sam gore napisao, samo sada bi to bilo ovako:
+
+label1.Text = 100.ToString();
+label1.Text = neki_broj.ToString();
+label1.Text = brojKalorija.ToString() + " kcal";
+
+            :)
 
  */
 using System.Collections.Generic;
