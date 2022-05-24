@@ -6,35 +6,22 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Model
 {
+    //Ova klasa predstavlja objekt namrinicu
     public class Grocery
     {
-        public const char DEL = '/';
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public Nutrition Nutrition { get; private set; }
-
-        public string ImagePath { get; set; } = string.Empty;
-        public Grocery(string name, string description, Nutrition nutrition)
+        //Namrinica ima
+        //Svoj naziv
+        public string Name { get; set; }
+        //Broj kalorija (pretvaramo se da je to kao broj kalorija na 100 grama)
+        public int Calories { get; set; }
+        //Konstruktor: Namrinicu ne možemo kreirati bez da joj damo ime i broj kalorija
+        public Grocery(string name, int calories)
         {
-            this.Nutrition = nutrition;
-            this.Name = name;
-            this.Description = description;
+            Calories = calories;
+            Name = name;
         }
 
-        public string FormatForFileLine()
-            => $"{this.Name}{DEL}" +
-            $"{this.Description}{DEL}" +
-            $"{this.ImagePath}{DEL}"+
-            $"{this.Nutrition.FormatForFileLine()}";
-
-        public static Grocery ParseFromFileLine(string line)
-        {
-            string[] data = line.Split(DEL);
-            Grocery grocery = new Grocery(name: data[0], description: data[1], nutrition: Nutrition.ParseFromFileLine(data[3]));
-            grocery.ImagePath = data[2];
-            return grocery;
-        }
-
+        //Ovaj kod je generirao Visual Studio
         public override bool Equals(object obj)
         {
             return obj is Grocery grocery &&
@@ -45,5 +32,6 @@ namespace DataLayer.Model
         {
             return 539060726 + EqualityComparer<string>.Default.GetHashCode(Name);
         }
+        //Ovaj kod je generirao Visual Studio
     }
 }

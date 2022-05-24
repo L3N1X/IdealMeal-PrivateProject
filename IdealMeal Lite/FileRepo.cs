@@ -19,10 +19,10 @@ namespace DataLayer.Repositories.Implementations
             if (!File.Exists(ADMIN_USERS_PATH))
             {
                 File.Create(ADMIN_USERS_PATH).Close();
-                IList<AdminUser> admins = new List<AdminUser>
+                IList<User> admins = new List<User>
                 {
-                    new AdminUser(firstName: "Marta", lastName: "Vlahek", username: "mvlahek", password: Cryptography.SHA512("admin")),
-                    new AdminUser(firstName: "Lucija", lastName: "Zidaric", username: "lzidaric", password: Cryptography.SHA512("admin"))
+                    new User(name: "Marta", lastName: "Vlahek", username: "mvlahek", password: Cryptography.SHA512("admin")),
+                    new User(name: "Lucija", lastName: "Zidaric", username: "lzidaric", password: Cryptography.SHA512("admin"))
                 };
                 File.WriteAllLines(ADMIN_USERS_PATH, admins.Select(admin => admin.FormatForFileLine()));
             }
@@ -51,12 +51,12 @@ namespace DataLayer.Repositories.Implementations
                 }
             }
         }
-        public IList<AdminUser> GetAdminUsers()
+        public IList<User> GetAdminUsers()
         {
             string[] lines = File.ReadAllLines(ADMIN_USERS_PATH);
-            return lines.ToList().Select(line => AdminUser.ParseFromFileLine(line)).ToList();
+            return lines.ToList().Select(line => User.ParseFromFileLine(line)).ToList();
         }
-        public AdminUser AuthAdminUser(string username, string password)
+        public User AuthAdminUser(string username, string password)
         {
             var authadmin = this.GetAdminUsers()
                 .FirstOrDefault(admin => admin.Username.Equals(username) && admin.Password.Equals(password));

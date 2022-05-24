@@ -6,81 +6,69 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Model
 {
+    //Ova klasa predstavlja objekt recept (objekt je instancirana klasa)
     public class Recepie
     {
-        public const char DEL = '|';
-        public const char INGRIDIENTS_LIST_DEL = ',';
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public IList<Ingridient> Ingridients { get; private set; } //SET?
-        public string ImagePath { get; set; } = string.Empty;
-        public Nutrition Nutrition 
-        {
-            get
-            {
-                var totalNutrition = new Nutrition();
-                foreach (var ingridient in Ingridients)
-                    totalNutrition = totalNutrition + ingridient.Grocery.Nutrition;
-                return totalNutrition;
-            } 
-        }
-        public Recepie(string name, string description, IList<Ingridient> ingridients)
+        //Naziv recepta
+        public string Name { get; set; }
+        //Opis recepta
+        public string Description { get; set; }
+        //Lista svih Sastojaka u ovom receptu
+        public List<Ingridient> Ingridients { get; set; }
+        //Konstruktor, recept se ne može generirati
+        public Recepie(string name, string description, List<Ingridient> ingridients)
         {
             this.Name = name;
             this.Description = description;
             this.Ingridients = ingridients;
         }
 
+        //Ova funkcija provjerava da li se ovaj odredeni recept može napraviti sa danim sastojcima
         public bool CanMakeWithGivenIngridients(IList<Ingridient> avaliableIngridients)
         {
             int ingridentsValid = 0;
-            foreach (var ingridient in this.Ingridients)
+            //Za svaki sastojak ovog recepta
+            foreach (var ingridient in Ingridients)
             {
+                //Za svaki sastojak koji smo proslijedili receptu koje on mora provjeriti
                 foreach (var avaliableIngridient in avaliableIngridients)
                 {
-                    if (ingridient.Equals(avaliableIngridient) 
-                        && ingridient.Amount <= avaliableIngridient.Amount)
-                        ingridentsValid++;
+                    //Ako je dani sastojak jednak sastojku recepta i tog danog sastojka ima vise ili jednako nego sastojka u receptu
+                    if (ingridient == avaliableIngridient && ingridient.Amount <= avaliableIngridient.Amount)
+                    {
+                        //Dodaj jedan broju valjanih sastojaka
+                        ingridentsValid = ingridentsValid + 1;
+                    }
                 }
             }
-            return ingridentsValid.Equals(this.Ingridients.Count);
-        }
-
-        public string FormatForFileLine()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb
-                .Append(this.Name)
-                .Append(DEL)
-                .Append(this.Description)
-                .Append(DEL)
-                .Append(this.ImagePath)
-                .Append(DEL);
-            foreach (var ingridient in this.Ingridients)
+            //Ako je broj valjanih sastojaka recepta jednak broju sastojaka u receptu
+            if(ingridentsValid == Ingridients.Count)
             {
-                sb.Append(ingridient.FormatForFileLine());
-                if (this.Ingridients.IndexOf(ingridient) == this.Ingridients.Count - 1)
-                    break;
-                sb.Append(INGRIDIENTS_LIST_DEL);
+                //Moze se napraviti ovaj recept
+                return true;
             }
-            return sb.ToString();
+            else
+            {
+                //Ne moze
+                return false;
+            }
         }
-
-        public static Recepie ParseFromFileLine(string line)
+        
+        //Ova funkcija vraca ukupni broj kalorija ovog recepta, prolazi svaki sastojak i zbraja kalorije
+        public int GetTotalCalories()
         {
-            string[] data = line.Split(DEL);
-            string name = data[0];
-            string description = data[1];
-            string imagePath = data[2];
-            string[] ingridentsData = data[3].Split(INGRIDIENTS_LIST_DEL);
-            IList<Ingridient> ingridients = new List<Ingridient>();
-
-            foreach (var ingridientRaw in ingridentsData)
-                ingridients.Add(Ingridient.ParseFromFileLine(ingridientRaw));
-
-            return new Recepie(name, description, ingridients);
+            //Ukupni broj kalorija
+            int totalCalories = 0;
+            //Za svaki sastojak u sastojcima ovog recepta
+            foreach (var ingridient in Ingridients)
+            {
+                //Zbroji kalorije (kalorije svakog sastojka se nalaze u njegovoj namirnici)
+                totalCalories = totalCalories + ingridient.Grocery.Calories;
+            }
+            return totalCalories;
         }
 
+        //Ovo je generirao Visual Studio
         public override bool Equals(object obj)
         {
             return obj is Recepie recepie &&
@@ -91,5 +79,6 @@ namespace DataLayer.Model
         {
             return 539060726 + EqualityComparer<string>.Default.GetHashCode(Name);
         }
+        //Ovo je generirao Visual Studio
     }
 }

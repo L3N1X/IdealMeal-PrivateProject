@@ -12,7 +12,7 @@ namespace DataLayer
     public class DataManager
     {
         private readonly Irepo repo;
-        public AdminUser User { get; set; }
+        public User User { get; set; }
         public DataManager()
         {
             try
@@ -34,11 +34,11 @@ namespace DataLayer
             return validRecepies;
         }
 
-        public IList<AdminUser> GetAdminUsers()
+        public IList<User> GetAdminUsers()
         {
             return repo.GetAdminUsers();
         }
-        public AdminUser AuthAdminUser(string username, string password)
+        public User AuthAdminUser(string username, string password)
         {
             return repo.AuthAdminUser(username, Cryptography.SHA512(password));
         }

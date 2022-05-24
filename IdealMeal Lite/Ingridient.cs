@@ -6,45 +6,24 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Model
 {
+    //Ova klasa predstavlja objekt sastojak
     public class Ingridient
     {
-        public const char DEL = ';';
-        private double amount;
+        //Sastojak ima:
 
-        public Grocery Grocery { get; private set; }
-        public double Amount { get => amount; set => amount = value; }
-        //private Nutrition nutrition;
-        public Nutrition Nutrition
-        {
-            get
-            {
-                double hundreth = amount / 100.0;
-                return Grocery.Nutrition * hundreth;
-            }
-        }
+        //Namrinicu npr: spagetti
+        public Grocery Grocery { get; set; }
+        //I danu kolicinu, mi se pretvaramo da su ovo grami, double jer zelimo imati decimalna mjesta
+        public double Amount { get; set; }
+        
+        //Konstruktor: sastojak se ne može generirati bez da mu proslijedimo namirnicu i količinu (opet, glumimo da su to grami, ne znamo bolje)
         public Ingridient(Grocery grocery, double amount)
         {
-            this.Grocery = grocery;
-            this.Amount = amount;
+            Grocery = grocery;
+            Amount = amount;
         }
 
-        public string FormatForFileLine()
-            => $"{this.Grocery.FormatForFileLine()}{DEL}" +
-            $"{this.Amount}";
-
-        public static Ingridient ParseFromFileLine(string line)
-        {
-            string[] data = line.Split(DEL);
-            return new Ingridient
-                (
-                    Grocery.ParseFromFileLine(data[0]),
-                    double.Parse(data[1])
-                );
-        }
-
-        public override string ToString()
-            => $"[{this.Amount}g] {this.Grocery.Name}";
-
+        //Ovo je generirao Visual Studio
         public override bool Equals(object obj)
         {
             return obj is Ingridient ingridient &&
@@ -55,5 +34,6 @@ namespace DataLayer.Model
         {
             return -676798384 + EqualityComparer<Grocery>.Default.GetHashCode(Grocery);
         }
+        //Ovo je generirao Visual Studio
     }
 }

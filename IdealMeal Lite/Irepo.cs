@@ -15,7 +15,7 @@ namespace DataLayer.Repositories.Interfaces
         IList<Recepie> GetRecepies();
         void CreateRecepie(Recepie recepie);
         void DeleteRecepie(Recepie recepie);
-        IList<AdminUser> GetAdminUsers();
-        AdminUser AuthAdminUser(string username, string password);
+        IList<User> GetAdminUsers();
+        User AuthAdminUser(string username, string password);
     }
 }
