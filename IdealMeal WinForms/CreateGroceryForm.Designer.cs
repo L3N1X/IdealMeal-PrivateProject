@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCreateGrocery = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,16 +40,21 @@
             this.txtDesription = new System.Windows.Forms.RichTextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCreateGrocery = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudProtein)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCarbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudKcal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCreateGrocery)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnCreateGrocery);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -60,7 +64,6 @@
             this.groupBox1.Controls.Add(this.nudCarbs);
             this.groupBox1.Controls.Add(this.nudFat);
             this.groupBox1.Controls.Add(this.nudKcal);
-            this.groupBox1.Controls.Add(this.txtDesription);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -68,18 +71,6 @@
             this.groupBox1.Size = new System.Drawing.Size(339, 503);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // btnCreateGrocery
-            // 
-            this.btnCreateGrocery.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCreateGrocery.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCreateGrocery.Location = new System.Drawing.Point(99, 457);
-            this.btnCreateGrocery.Name = "btnCreateGrocery";
-            this.btnCreateGrocery.Size = new System.Drawing.Size(141, 33);
-            this.btnCreateGrocery.TabIndex = 23;
-            this.btnCreateGrocery.Text = "Kreiraj namirnicu";
-            this.btnCreateGrocery.UseVisualStyleBackColor = false;
-            this.btnCreateGrocery.Click += new System.EventHandler(this.btnCreateGrocery_Click);
             // 
             // label4
             // 
@@ -145,6 +136,7 @@
             // 
             // nudFat
             // 
+            this.nudFat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nudFat.DecimalPlaces = 2;
             this.nudFat.Location = new System.Drawing.Point(97, 368);
             this.nudFat.Maximum = new decimal(new int[] {
@@ -172,9 +164,9 @@
             // txtDesription
             // 
             this.txtDesription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDesription.Location = new System.Drawing.Point(10, 258);
+            this.txtDesription.Location = new System.Drawing.Point(6, 19);
             this.txtDesription.Name = "txtDesription";
-            this.txtDesription.Size = new System.Drawing.Size(319, 68);
+            this.txtDesription.Size = new System.Drawing.Size(307, 56);
             this.txtDesription.TabIndex = 2;
             this.txtDesription.Text = "";
             // 
@@ -196,10 +188,32 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnCreateGrocery
+            // 
+            this.btnCreateGrocery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateGrocery.Image = global::IdealMeal_WinForms.Images.add;
+            this.btnCreateGrocery.Location = new System.Drawing.Point(147, 449);
+            this.btnCreateGrocery.Name = "btnCreateGrocery";
+            this.btnCreateGrocery.Size = new System.Drawing.Size(45, 48);
+            this.btnCreateGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCreateGrocery.TabIndex = 24;
+            this.btnCreateGrocery.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtDesription);
+            this.groupBox2.Location = new System.Drawing.Point(10, 249);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(319, 87);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Kratak opis";
+            // 
             // CreateGroceryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(358, 527);
             this.Controls.Add(this.groupBox1);
             this.Name = "CreateGroceryForm";
@@ -212,6 +226,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudFat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudKcal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCreateGrocery)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -230,6 +246,7 @@
         private System.Windows.Forms.RichTextBox txtDesription;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnCreateGrocery;
+        private System.Windows.Forms.PictureBox btnCreateGrocery;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

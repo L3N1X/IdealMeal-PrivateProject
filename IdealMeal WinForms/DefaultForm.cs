@@ -36,7 +36,13 @@ namespace IdealMeal_WinForms
         private void DefaultForm_Load(object sender, EventArgs e)
         {
             this.lblLoggedUser.Text = $"Korisnik: {dataManager.User}";
-            this.ResetGroceriesPanel();
+            this.FillAndResetGroceriesPanel();
+        }
+
+        private void FillRecepiesPanel(IList<Ingridient> ingridients)
+        {
+            this.flpRecepies.Controls.Clear();
+            this.dataManager.GetValidRecepies(ingridients).ToList().ForEach(recepie => this.flpRecepies.Controls.Add(new RecepieControl(recepie)));
         }
 
         private void pbCreateGrocery_MouseHover(object sender, EventArgs e)
@@ -44,7 +50,7 @@ namespace IdealMeal_WinForms
             this.ttCreateGrocery.Show("Dodaj novu namrinicu", sender as Control);
         }
 
-        private void ResetGroceriesPanel()
+        private void FillAndResetGroceriesPanel()
         {
             this.flpGroceries.Controls.Clear();
             dataManager.GetGroceries().ToList().ForEach(grocery => 
@@ -93,7 +99,6 @@ namespace IdealMeal_WinForms
             {
                 dataManager.CreateGrocery(dialog.Grocery);
                 this.flpGroceries.Controls.Add(new GroceryControl(dialog.Grocery));
-                //this.ResetGroceriesPanel();
             }
             catch (Exception ex)
             {
@@ -104,6 +109,46 @@ namespace IdealMeal_WinForms
         private void MainTab_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCreateRecepie_Click(object sender, EventArgs e)
+        {
+            if (this.flpHomeGroceries.Controls.Count == 0)
+            {
+                MessageBox.Show("Molimo vas da odaberete namirnice za recept");
+                return;
+            }
+                
+            IList<Ingridient> ingridients = new List<Ingridient>();
+            foreach (var control in this.flpHomeGroceries.Controls)
+                ingridients.Add(((IngridientControl)control).Ingridient);
+
+            CreateRecepieForm dialog = new CreateRecepieForm(ingridients);
+            dialog.ShowDialog();
+            if (dialog.Recepie == null)
+                return;
+            try
+            {
+                dataManager.CreateRecepie(dialog.Recepie);
+                this.flpRecepies.Controls.Add(new RecepieControl(dialog.Recepie));
+                this.flpHomeGroceries.Controls.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSearchRecepie_Click(object sender, EventArgs e)
+        {
+            IList<Ingridient> ingridients = new List<Ingridient>();
+            foreach (var control in this.flpHomeGroceries.Controls)
+            {
+                ingridients.Add(((IngridientControl)control).Ingridient);
+            }
+            this.FillRecepiesPanel(ingridients);
+            if (this.flpRecepies.Controls.Count == 0)
+                MessageBox.Show("Nismo pronašli niti jedan recept:(");
         }
     }
 }

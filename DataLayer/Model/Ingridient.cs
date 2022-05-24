@@ -42,6 +42,9 @@ namespace DataLayer.Model
                 );
         }
 
+        public override string ToString()
+            => $"[{this.Amount}g] {this.Grocery.Name}";
+
         public override bool Equals(object obj)
         {
             return obj is Ingridient ingridient &&

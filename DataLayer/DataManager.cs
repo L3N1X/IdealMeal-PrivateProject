@@ -25,6 +25,15 @@ namespace DataLayer
             }
             User = repo.AuthAdminUser("lzidaric", Cryptography.SHA512("admin"));
         }
+
+        public IList<Recepie> GetValidRecepies(IList<Ingridient> ingridients)
+        {
+            IList<Recepie> allrecepies = repo.GetRecepies();
+            IList<Recepie> validRecepies = new List<Recepie>();
+            allrecepies.ToList().ForEach(recepie => { if (recepie.CanMakeWithGivenIngridients(ingridients)) { validRecepies.Add(recepie); } });
+            return allrecepies;
+        }
+
         public IList<AdminUser> GetAdminUsers()
         {
             return repo.GetAdminUsers();

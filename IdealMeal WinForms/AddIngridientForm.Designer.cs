@@ -57,7 +57,7 @@
             // 
             // btnAddIngridient
             // 
-            this.btnAddIngridient.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAddIngridient.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddIngridient.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAddIngridient.Location = new System.Drawing.Point(84, 361);
             this.btnAddIngridient.Name = "btnAddIngridient";
@@ -84,6 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(309, 415);
             this.Controls.Add(this.btnAddIngridient);
             this.Controls.Add(this.label1);

@@ -58,6 +58,12 @@
     <Compile Include="CreateGroceryForm.Designer.cs">
       <DependentUpon>CreateGroceryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateRecepieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateRecepieForm.Designer.cs">
+      <DependentUpon>CreateRecepieForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DefaultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,12 +95,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecepieControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecepieControl.Designer.cs">
+      <DependentUpon>RecepieControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools.cs" />
     <EmbeddedResource Include="AddIngridientForm.resx">
       <DependentUpon>AddIngridientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGroceryForm.resx">
       <DependentUpon>CreateGroceryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateRecepieForm.resx">
+      <DependentUpon>CreateRecepieForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DefaultForm.resx">
       <DependentUpon>DefaultForm.cs</DependentUpon>
@@ -121,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecepieControl.resx">
+      <DependentUpon>RecepieControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,6 +163,7 @@
     <Content Include="Images\delete.png" />
     <Content Include="Images\groceries.png" />
     <Content Include="Images\ideaMeal_logo.png" />
+    <Content Include="Images\recepie.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
