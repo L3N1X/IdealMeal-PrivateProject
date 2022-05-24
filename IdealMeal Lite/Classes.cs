@@ -1,5 +1,5 @@
 ﻿/*
- * 
+
 
 
 Vrlo bih rado da mogu ovaj projekt još jednostavnije napraviti, ali to nije moguće bez da više uopce nije on ošto ste napisale u opisu projekta.
@@ -96,7 +96,7 @@ Kako to izgleda? Kako sada kreiramo novog covjeka?
 Covjek c = new Covjek("Milica", "Krmpotic", 25);
 
 
-Želimo imati puno ljudi, ajmo ih spremiti u listu:
+Želimo imati puno ljudi, ajmo ih spremiti u listu.
 napravimo troje ljudi: 
 
 Covjek c1 = new Covjek("Pero", "Peric", 25);

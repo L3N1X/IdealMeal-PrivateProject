@@ -1,5 +1,4 @@
-﻿using DataLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,31 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IdealMeal_WinForms
+namespace IdealMeal_Lite
 {
     public partial class LoginForm : Form
     {
-        private DataManager dataManager;
-        public LoginForm(DataManager dataManager)
+        public LoginForm()
         {
             InitializeComponent();
-            this.txtPassword.PasswordChar = '*';
-            this.dataManager = dataManager;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            bool loginSucessful = false;
+            //Dohvati vrijednosti iz tekstualih polja
             string username = this.txtUsername.Text;
             string password = this.txtPassword.Text;
-            dataManager.User = dataManager.AuthAdminUser(username, password);
-            if (dataManager.User is null)
+            //Ako je upisan tekst jednak ovim podacima, 
+            if(username == "lucija" && password == "1234")
             {
-                MessageBox.Show("Korisničko ime ili lozinka su krivi");
-                this.txtUsername.Text = string.Empty;
-                this.txtPassword.Text = string.Empty;
+                //login je prosao
+                loginSucessful = true;
             }
-            else
-                this.DialogResult = DialogResult.OK;
+            if(loginSucessful == true)
+            {
+                //Ako je login prosao, otvori glavnu formu (glavni dio aplikacije) i sakri trenutnu formu
+                Hide();
+                //Napravi novu MainFormu
+                MainForm form = new MainForm();
+                //Iscrtaj je na ekran
+                form.Show();
+            }
         }
     }
 }

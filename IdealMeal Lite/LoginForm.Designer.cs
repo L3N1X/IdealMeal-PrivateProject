@@ -1,4 +1,4 @@
-﻿namespace IdealMeal_WinForms
+﻿namespace IdealMeal_Lite
 {
     partial class LoginForm
     {
@@ -81,7 +81,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::IdealMeal_WinForms.Images.ideaMeal_logo;
             this.pictureBox1.Location = new System.Drawing.Point(71, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 162);
