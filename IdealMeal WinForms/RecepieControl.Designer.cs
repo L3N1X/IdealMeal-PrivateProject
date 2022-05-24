@@ -68,10 +68,10 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(34, 13);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(109, 19);
+            this.lblName.Size = new System.Drawing.Size(115, 19);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "RECEPIE NAME";
             // 

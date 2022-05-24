@@ -172,9 +172,10 @@
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(10, 222);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(319, 20);
+            this.txtName.Size = new System.Drawing.Size(319, 24);
             this.txtName.TabIndex = 1;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -198,6 +199,7 @@
             this.btnCreateGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCreateGrocery.TabIndex = 24;
             this.btnCreateGrocery.TabStop = false;
+            this.btnCreateGrocery.Click += new System.EventHandler(this.btnCreateGrocery_Click);
             // 
             // groupBox2
             // 

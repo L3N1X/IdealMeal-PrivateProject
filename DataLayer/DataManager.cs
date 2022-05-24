@@ -31,7 +31,7 @@ namespace DataLayer
             IList<Recepie> allrecepies = repo.GetRecepies();
             IList<Recepie> validRecepies = new List<Recepie>();
             allrecepies.ToList().ForEach(recepie => { if (recepie.CanMakeWithGivenIngridients(ingridients)) { validRecepies.Add(recepie); } });
-            return allrecepies;
+            return validRecepies;
         }
 
         public IList<AdminUser> GetAdminUsers()

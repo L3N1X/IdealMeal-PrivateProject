@@ -26,10 +26,10 @@ namespace IdealMeal_WinForms
                 MessageBox.Show(ex.Message);
                 Close();
             }
-            //Form dialog = new LoginForm(dataManager);
-            //var result = dialog.ShowDialog();
-            //if (!DialogResult.OK.Equals(result))
-            //    Close();
+            Form dialog = new LoginForm(dataManager);
+            var result = dialog.ShowDialog();
+            if (!DialogResult.OK.Equals(result))
+                Close();
             InitializeComponent();
         }
 
@@ -98,6 +98,8 @@ namespace IdealMeal_WinForms
             try
             {
                 dataManager.CreateGrocery(dialog.Grocery);
+                GroceryControl groceryControl = new GroceryControl(dialog.Grocery);
+                groceryControl.GroceryAddedToHome += GroceryControl_GroceryAddedToHome;
                 this.flpGroceries.Controls.Add(new GroceryControl(dialog.Grocery));
             }
             catch (Exception ex)
@@ -130,8 +132,8 @@ namespace IdealMeal_WinForms
             try
             {
                 dataManager.CreateRecepie(dialog.Recepie);
-                this.flpRecepies.Controls.Add(new RecepieControl(dialog.Recepie));
                 this.flpHomeGroceries.Controls.Clear();
+                MessageBox.Show($"Recept: {dialog.Recepie.Name} je uspješno dodan!");
             }
             catch (Exception ex)
             {

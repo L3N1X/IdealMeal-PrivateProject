@@ -57,7 +57,7 @@
             // 
             this.flpGroceries.AutoScroll = true;
             this.flpGroceries.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flpGroceries.Location = new System.Drawing.Point(8, 516);
+            this.flpGroceries.Location = new System.Drawing.Point(8, 494);
             this.flpGroceries.Name = "flpGroceries";
             this.flpGroceries.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flpGroceries.Size = new System.Drawing.Size(1360, 249);
@@ -72,7 +72,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1384, 871);
+            this.tabControl.Size = new System.Drawing.Size(1384, 856);
             this.tabControl.TabIndex = 2;
             // 
             // MainTab
@@ -89,7 +89,7 @@
             this.MainTab.Location = new System.Drawing.Point(4, 23);
             this.MainTab.Name = "MainTab";
             this.MainTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MainTab.Size = new System.Drawing.Size(1376, 844);
+            this.MainTab.Size = new System.Drawing.Size(1376, 829);
             this.MainTab.TabIndex = 0;
             this.MainTab.Text = "Glavna stranica";
             this.MainTab.Click += new System.EventHandler(this.MainTab_Click);
@@ -99,7 +99,7 @@
             this.btnCreateRecepie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(235)))), ((int)(((byte)(118)))));
             this.btnCreateRecepie.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateRecepie.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCreateRecepie.Location = new System.Drawing.Point(1192, 394);
+            this.btnCreateRecepie.Location = new System.Drawing.Point(1192, 376);
             this.btnCreateRecepie.Name = "btnCreateRecepie";
             this.btnCreateRecepie.Size = new System.Drawing.Size(178, 114);
             this.btnCreateRecepie.TabIndex = 6;
@@ -127,7 +127,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.IndianRed;
             this.groupBox1.Location = new System.Drawing.Point(10, 248);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1176, 261);
+            this.groupBox1.Size = new System.Drawing.Size(1176, 243);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Moje namrinice";
@@ -139,7 +139,7 @@
             this.flpHomeGroceries.Location = new System.Drawing.Point(6, 25);
             this.flpHomeGroceries.Name = "flpHomeGroceries";
             this.flpHomeGroceries.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flpHomeGroceries.Size = new System.Drawing.Size(1154, 230);
+            this.flpHomeGroceries.Size = new System.Drawing.Size(1154, 211);
             this.flpHomeGroceries.TabIndex = 1;
             this.flpHomeGroceries.WrapContents = false;
             // 
@@ -147,7 +147,7 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblLoggedUser});
-            this.statusStrip.Location = new System.Drawing.Point(3, 819);
+            this.statusStrip.Location = new System.Drawing.Point(3, 804);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1370, 22);
             this.statusStrip.TabIndex = 2;
@@ -196,7 +196,7 @@
             // 
             this.pbCreateGrocery.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCreateGrocery.Image = global::IdealMeal_WinForms.Images.add;
-            this.pbCreateGrocery.Location = new System.Drawing.Point(1303, 770);
+            this.pbCreateGrocery.Location = new System.Drawing.Point(1303, 748);
             this.pbCreateGrocery.Name = "pbCreateGrocery";
             this.pbCreateGrocery.Size = new System.Drawing.Size(45, 48);
             this.pbCreateGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -219,11 +219,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 871);
+            this.ClientSize = new System.Drawing.Size(1384, 856);
             this.Controls.Add(this.tabControl);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaximumSize = new System.Drawing.Size(1400, 910);
-            this.MinimumSize = new System.Drawing.Size(1400, 910);
+            this.MaximumSize = new System.Drawing.Size(1400, 895);
+            this.MinimumSize = new System.Drawing.Size(1400, 895);
             this.Name = "DefaultForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IdealMeal";

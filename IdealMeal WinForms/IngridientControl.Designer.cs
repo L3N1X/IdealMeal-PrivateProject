@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblGrocery = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblAmount = new System.Windows.Forms.Label();
             this.lblCalories = new System.Windows.Forms.Label();
@@ -38,42 +36,24 @@
             this.lblFat = new System.Windows.Forms.Label();
             this.lblProtein = new System.Windows.Forms.Label();
             this.lblCarbs = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblGrocery = new System.Windows.Forms.Label();
             this.pbGrocery = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrocery)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(2, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(294, 194);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lblGrocery);
-            this.groupBox2.Controls.Add(this.pbGrocery);
-            this.groupBox2.Location = new System.Drawing.Point(10, 10);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(165, 170);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            // 
-            // lblGrocery
-            // 
-            this.lblGrocery.AutoSize = true;
-            this.lblGrocery.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrocery.Location = new System.Drawing.Point(37, 149);
-            this.lblGrocery.Name = "lblGrocery";
-            this.lblGrocery.Size = new System.Drawing.Size(93, 16);
-            this.lblGrocery.TabIndex = 1;
-            this.lblGrocery.Text = "GROCERYNAME";
             // 
             // panel1
             // 
@@ -145,14 +125,33 @@
             this.lblCarbs.TabIndex = 5;
             this.lblCarbs.Text = "Ugljikohidrati: 0g";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblGrocery);
+            this.panel2.Controls.Add(this.pbGrocery);
+            this.panel2.Location = new System.Drawing.Point(7, 21);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(165, 162);
+            this.panel2.TabIndex = 3;
+            // 
+            // lblGrocery
+            // 
+            this.lblGrocery.AutoSize = true;
+            this.lblGrocery.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrocery.Location = new System.Drawing.Point(39, 139);
+            this.lblGrocery.Name = "lblGrocery";
+            this.lblGrocery.Size = new System.Drawing.Size(93, 16);
+            this.lblGrocery.TabIndex = 3;
+            this.lblGrocery.Text = "GROCERYNAME";
+            // 
             // pbGrocery
             // 
             this.pbGrocery.Image = global::IdealMeal_WinForms.Images.groceries;
-            this.pbGrocery.Location = new System.Drawing.Point(20, 18);
+            this.pbGrocery.Location = new System.Drawing.Point(22, 8);
             this.pbGrocery.Name = "pbGrocery";
             this.pbGrocery.Size = new System.Drawing.Size(120, 129);
             this.pbGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbGrocery.TabIndex = 0;
+            this.pbGrocery.TabIndex = 2;
             this.pbGrocery.TabStop = false;
             // 
             // IngridientControl
@@ -166,10 +165,10 @@
             this.Size = new System.Drawing.Size(300, 200);
             this.Load += new System.EventHandler(this.IngridientControl_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrocery)).EndInit();
             this.ResumeLayout(false);
 
@@ -178,15 +177,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pbGrocery;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblCalories;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Label lblGrocery;
         private System.Windows.Forms.Label lblCarbs;
         private System.Windows.Forms.Label lblProtein;
         private System.Windows.Forms.Label lblFat;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblGrocery;
+        private System.Windows.Forms.PictureBox pbGrocery;
     }
 }
