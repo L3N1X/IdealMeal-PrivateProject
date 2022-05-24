@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdealMeal WinForms", "IdealMeal WinForms\IdealMeal WinForms.csproj", "{15F5E55C-198B-416A-B126-A4AFD8B8E1A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdealMeal Lite", "IdealMeal Lite\IdealMeal Lite.csproj", "{F261476E-ACB7-40F6-924D-2B37BB718097}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{15F5E55C-198B-416A-B126-A4AFD8B8E1A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15F5E55C-198B-416A-B126-A4AFD8B8E1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15F5E55C-198B-416A-B126-A4AFD8B8E1A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F261476E-ACB7-40F6-924D-2B37BB718097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F261476E-ACB7-40F6-924D-2B37BB718097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F261476E-ACB7-40F6-924D-2B37BB718097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F261476E-ACB7-40F6-924D-2B37BB718097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
