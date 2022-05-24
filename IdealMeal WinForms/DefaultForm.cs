@@ -47,7 +47,6 @@ namespace IdealMeal_WinForms
         private void ResetGroceriesPanel()
         {
             this.flpGroceries.Controls.Clear();
-            //dataManager.GetGroceries().ToList().ForEach(grocery => this.flpGroceries.Controls.Add(new GroceryControl(grocery)));
             dataManager.GetGroceries().ToList().ForEach(grocery => 
             {
                 GroceryControl groceryControl = new GroceryControl(grocery);
@@ -60,15 +59,15 @@ namespace IdealMeal_WinForms
 
         private void GroceryControl_GroceryRemovedFromHome(object sender, EventArgs args)
         {
-
-            MessageBox.Show("Maknuo");
+            this.flpHomeGroceries.Controls.Remove(((Control)sender));
         }
 
         private void GroceryControl_GroceryAddedToHome(object sender, EventArgs args)
         {
-            MessageBox.Show("Dodao si ");
             Grocery grocery = ((GroceryControl)sender).Grocery;
-            this.flpHomeGroceries.Controls.Add(new GroceryControl(grocery, true));
+            GroceryControl groceryControl = new GroceryControl(grocery, isHomeGrocery: true);
+            groceryControl.GroceryRemovedFromHome += GroceryControl_GroceryRemovedFromHome;
+            this.flpHomeGroceries.Controls.Add(groceryControl);
         }
 
         private void pbCreateGrocery_Click(object sender, EventArgs e)

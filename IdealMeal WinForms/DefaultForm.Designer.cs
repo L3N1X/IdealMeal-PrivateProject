@@ -33,16 +33,16 @@
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.MainTab = new System.Windows.Forms.TabPage();
+            this.flpHomeGroceries = new System.Windows.Forms.FlowLayoutPanel();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.lblLoggedUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.pbCreateGrocery = new System.Windows.Forms.PictureBox();
             this.RecepiesTab = new System.Windows.Forms.TabPage();
             this.ttCreateGrocery = new System.Windows.Forms.ToolTip(this.components);
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.lblLoggedUser = new System.Windows.Forms.ToolStripStatusLabel();
-            this.flpHomeGroceries = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl.SuspendLayout();
             this.MainTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCreateGrocery)).BeginInit();
             this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCreateGrocery)).BeginInit();
             this.SuspendLayout();
             // 
             // flpGroceries
@@ -89,11 +89,38 @@
             this.MainTab.TabIndex = 0;
             this.MainTab.Text = "Glavna stranica";
             // 
+            // flpHomeGroceries
+            // 
+            this.flpHomeGroceries.AutoScroll = true;
+            this.flpHomeGroceries.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flpHomeGroceries.Location = new System.Drawing.Point(8, 404);
+            this.flpHomeGroceries.Name = "flpHomeGroceries";
+            this.flpHomeGroceries.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.flpHomeGroceries.Size = new System.Drawing.Size(1360, 248);
+            this.flpHomeGroceries.TabIndex = 1;
+            this.flpHomeGroceries.WrapContents = false;
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblLoggedUser});
+            this.statusStrip.Location = new System.Drawing.Point(3, 904);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(1370, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // lblLoggedUser
+            // 
+            this.lblLoggedUser.Name = "lblLoggedUser";
+            this.lblLoggedUser.Size = new System.Drawing.Size(60, 17);
+            this.lblLoggedUser.Text = "Korisnik: ?";
+            // 
             // pbCreateGrocery
             // 
             this.pbCreateGrocery.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCreateGrocery.Image = global::IdealMeal_WinForms.Images.add;
-            this.pbCreateGrocery.Location = new System.Drawing.Point(9, 658);
+            this.pbCreateGrocery.Location = new System.Drawing.Point(6, 665);
             this.pbCreateGrocery.Name = "pbCreateGrocery";
             this.pbCreateGrocery.Size = new System.Drawing.Size(45, 48);
             this.pbCreateGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -112,33 +139,6 @@
             this.RecepiesTab.TabIndex = 1;
             this.RecepiesTab.Text = "Recepti";
             // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblLoggedUser});
-            this.statusStrip.Location = new System.Drawing.Point(3, 904);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1370, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "statusStrip1";
-            // 
-            // lblLoggedUser
-            // 
-            this.lblLoggedUser.Name = "lblLoggedUser";
-            this.lblLoggedUser.Size = new System.Drawing.Size(60, 17);
-            this.lblLoggedUser.Text = "Korisnik: ?";
-            // 
-            // flpHomeGroceries
-            // 
-            this.flpHomeGroceries.AutoScroll = true;
-            this.flpHomeGroceries.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flpHomeGroceries.Location = new System.Drawing.Point(8, 424);
-            this.flpHomeGroceries.Name = "flpHomeGroceries";
-            this.flpHomeGroceries.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flpHomeGroceries.Size = new System.Drawing.Size(1360, 228);
-            this.flpHomeGroceries.TabIndex = 1;
-            this.flpHomeGroceries.WrapContents = false;
-            // 
             // DefaultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -156,9 +156,9 @@
             this.tabControl.ResumeLayout(false);
             this.MainTab.ResumeLayout(false);
             this.MainTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCreateGrocery)).EndInit();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCreateGrocery)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
