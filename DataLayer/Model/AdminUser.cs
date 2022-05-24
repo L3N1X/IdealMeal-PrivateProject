@@ -39,5 +39,8 @@ namespace DataLayer.Model
             $"{this.LastName}{DEL}" +
             $"{this.Username}{DEL}" +
             $"{this.Password}";
+
+        public override string ToString()
+            => $"{this.FirstName} {this.LastName}";
     }
 }

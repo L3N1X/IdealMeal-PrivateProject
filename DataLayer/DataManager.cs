@@ -23,6 +23,7 @@ namespace DataLayer
             {
                 throw;
             }
+            User = repo.AuthAdminUser("lzidaric", Cryptography.SHA512("admin"));
         }
         public IList<AdminUser> GetAdminUsers()
         {

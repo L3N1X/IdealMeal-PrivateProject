@@ -1,5 +1,4 @@
-﻿using DataLayer.Constants;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,18 +10,15 @@ namespace DataLayer.Model
     {
         public const char DEL = ';';
         public Grocery Grocery { get; private set; }
-        public Unit Unit { get; private set; }
         public double Amount { get; set; }
-        public Ingridient(Grocery grocery, Unit unit, double amount)
+        public Ingridient(Grocery grocery, double amount)
         {
             this.Grocery = grocery;
-            this.Unit = unit;
             this.Amount = amount;
         }
 
         public string FormatForFileLine()
             => $"{this.Grocery.FormatForFileLine()}{DEL}" +
-            $"{this.Unit}{DEL}" +
             $"{this.Amount}";
 
         public static Ingridient ParseFromFileLine(string line)
@@ -31,24 +27,19 @@ namespace DataLayer.Model
             return new Ingridient
                 (
                     Grocery.ParseFromFileLine(data[0]),
-                    (Unit) Enum.Parse(typeof(Unit), data[1]), 
-                    double.Parse(data[2])
+                    double.Parse(data[1])
                 );
         }
 
         public override bool Equals(object obj)
         {
             return obj is Ingridient ingridient &&
-                   EqualityComparer<Grocery>.Default.Equals(Grocery, ingridient.Grocery) &&
-                   Unit == ingridient.Unit;
+                   EqualityComparer<Grocery>.Default.Equals(Grocery, ingridient.Grocery);
         }
 
         public override int GetHashCode()
         {
-            int hashCode = 1082803831;
-            hashCode = hashCode * -1521134295 + EqualityComparer<Grocery>.Default.GetHashCode(Grocery);
-            hashCode = hashCode * -1521134295 + Unit.GetHashCode();
-            return hashCode;
+            return -676798384 + EqualityComparer<Grocery>.Default.GetHashCode(Grocery);
         }
     }
 }

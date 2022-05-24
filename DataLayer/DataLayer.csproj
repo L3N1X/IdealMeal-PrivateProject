@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\MeasuringUnits.cs" />
     <Compile Include="Cryptography.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="Model\Grocery.cs" />
@@ -54,6 +53,8 @@
     <Compile Include="Repositories\Implementations\FileRepo.cs" />
     <Compile Include="Repositories\Interfaces\Irepo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Constants\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
