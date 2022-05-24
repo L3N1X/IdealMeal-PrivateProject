@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddIngridientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIngridientForm.Designer.cs">
+      <DependentUpon>AddIngridientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateGroceryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools.cs" />
+    <EmbeddedResource Include="AddIngridientForm.resx">
+      <DependentUpon>AddIngridientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateGroceryForm.resx">
       <DependentUpon>CreateGroceryForm.cs</DependentUpon>
     </EmbeddedResource>

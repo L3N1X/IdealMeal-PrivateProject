@@ -65,9 +65,22 @@ namespace IdealMeal_WinForms
         private void GroceryControl_GroceryAddedToHome(object sender, EventArgs args)
         {
             Grocery grocery = ((GroceryControl)sender).Grocery;
-            GroceryControl groceryControl = new GroceryControl(grocery, isHomeGrocery: true);
-            groceryControl.GroceryRemovedFromHome += GroceryControl_GroceryRemovedFromHome;
-            this.flpHomeGroceries.Controls.Add(groceryControl);
+            //GroceryControl groceryControl = new GroceryControl(grocery, isHomeGrocery: true);
+            //groceryControl.GroceryRemovedFromHome += GroceryControl_GroceryRemovedFromHome;
+            //this.flpHomeGroceries.Controls.Add(groceryControl);
+
+            AddIngridientForm dialog = new AddIngridientForm(grocery);
+            dialog.ShowDialog();
+            if (dialog.Ingridient == null)
+                return;
+            IngridientControl ingridientControl = new IngridientControl(dialog.Ingridient);
+            ingridientControl.IngridentRemoved += IngridientControl_IngridentRemoved;
+            this.flpHomeGroceries.Controls.Add(ingridientControl);
+        }
+
+        private void IngridientControl_IngridentRemoved(object sender, EventArgs args)
+        {
+            throw new NotImplementedException();
         }
 
         private void pbCreateGrocery_Click(object sender, EventArgs e)

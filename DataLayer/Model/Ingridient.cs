@@ -9,8 +9,19 @@ namespace DataLayer.Model
     public class Ingridient
     {
         public const char DEL = ';';
+        private double amount;
+
         public Grocery Grocery { get; private set; }
-        public double Amount { get; set; }
+        public double Amount { get => amount; set => amount = value; }
+        private Nutrition nutrition;
+        public Nutrition Nutrition
+        {
+            get
+            {
+                double hundreth = amount / 100.0;
+                return nutrition * hundreth;
+            }
+        }
         public Ingridient(Grocery grocery, double amount)
         {
             this.Grocery = grocery;

@@ -14,6 +14,7 @@ namespace IdealMeal_WinForms
 {
     public partial class GroceryControl : UserControl
     {
+        //Ukolni jedan event, makni bool field
         public delegate void GroceryAddedToHomeDelegate(object sender, EventArgs args);
         public event GroceryAddedToHomeDelegate GroceryAddedToHome;
 
