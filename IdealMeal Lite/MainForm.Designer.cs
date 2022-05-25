@@ -148,13 +148,13 @@
             this.pbCreateGrocery.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCreateGrocery.Location = new System.Drawing.Point(1312, 799);
             this.pbCreateGrocery.Name = "pbCreateGrocery";
-            this.pbCreateGrocery.Size = new System.Drawing.Size(45, 52);
+            this.pbCreateGrocery.Size = new System.Drawing.Size(50, 50);
             this.pbCreateGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCreateGrocery.TabIndex = 8;
             this.pbCreateGrocery.TabStop = false;
             // 
             // pictureBox1
-            //
+            // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(301, 249);

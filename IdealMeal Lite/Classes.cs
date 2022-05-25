@@ -5,12 +5,7 @@
 Vrlo bih rado da mogu ovaj projekt još jednostavnije napraviti, ali to nije moguće bez da više uopce nije on ošto ste napisale u opisu projekta.
 Sada je on okvirno ono sto ste napisali, od nekih stvari ste odustale jer su pak previse komplicirane, tipa tjedni plan prehrane i sl.
 
-
-Ono što trebate znati:
-Ja sam netko kog poznajete i trazile ste moju pomoc. zezule ste se sa odabirom teme koja je dosta kompleksna
-Ja sam vam pokazao kako da napravite ove stvari.
-
-Pokazao sam vam kako korisiti klase, njihove konstruktore i liste.
+Objasniti cu vam kako korisiti klase, njihove konstruktore i liste. (Da ukratko znate ako vas itko pita)
 
 Klasa je nacrt za neki objekt. Mi tu u programiranju imamo int, string, double, char. To su samo ili neka slova ili riječi ili brojevi.
 Radimo nacrt za čovjeka, što čovijek ima? Recimo ime, prezime, i starost.
@@ -26,9 +21,9 @@ Kako radimo klasu:
     }
 
 
-Sada smo negdje u kodu i želimo napraviti covijeka, kako se to radi? To se zove instanciranje klase, onda je to sada objekt
+Sada smo negdje u kodu i želimo napraviti covijeka, kako se to radi? To se zove instanciranje klase, onda ona postaje objekt (Klasa se gradi u projekt)
 
-Covjek c = new Covjek();   -> Ovo je objekt klase Covjek, naziv varijable je c
+Covjek c = new Covjek();   -> Ovo je objekt klase Covjek, naziv varijable je c -> varijabla c je "referenca" naziva c na objekt tipa "Covjek"
 
 Sada je taj čovijek živ, ali nema niti ime niti prezime, nismo mu ga dali :(
 Kako mu dajemo ime, prezime i starost?
