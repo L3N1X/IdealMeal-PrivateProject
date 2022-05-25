@@ -1,11 +1,7 @@
 ﻿/*
 
 
-
-Vrlo bih rado da mogu ovaj projekt još jednostavnije napraviti, ali to nije moguće bez da više uopce nije on ošto ste napisale u opisu projekta.
-Sada je on okvirno ono sto ste napisali, od nekih stvari ste odustale jer su pak previse komplicirane, tipa tjedni plan prehrane i sl.
-
-Objasniti cu vam kako korisiti klase, njihove konstruktore i liste. (Da ukratko znate ako vas itko pita)
+Objasnit cu vam kako korisiti klase, njihove konstruktore i liste. (Da ukratko znate ako vas itko pita)
 
 Klasa je nacrt za neki objekt. Mi tu u programiranju imamo int, string, double, char. To su samo ili neka slova ili riječi ili brojevi.
 Radimo nacrt za čovjeka, što čovijek ima? Recimo ime, prezime, i starost.
