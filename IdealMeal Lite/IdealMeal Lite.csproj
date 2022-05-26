@@ -96,6 +96,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecepieControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecepieControl.Designer.cs">
+      <DependentUpon>RecepieControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddIngridientForm.resx">
       <DependentUpon>AddIngridientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecepieControl.resx">
+      <DependentUpon>RecepieControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

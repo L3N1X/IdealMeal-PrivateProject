@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblLoggedUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -35,15 +36,18 @@
             this.btnCreateRecepie = new System.Windows.Forms.Button();
             this.btnSearchRecepie = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.flpHomeGroceries = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpIngridients = new System.Windows.Forms.FlowLayoutPanel();
             this.flpGroceries = new System.Windows.Forms.FlowLayoutPanel();
             this.pbCreateGrocery = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ContextMenuStripGrocery = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnAddGrocery = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCreateGrocery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ContextMenuStripGrocery.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
@@ -111,7 +115,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.flpHomeGroceries);
+            this.groupBox1.Controls.Add(this.flpIngridients);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.IndianRed;
             this.groupBox1.Location = new System.Drawing.Point(19, 261);
@@ -123,14 +127,14 @@
             // 
             // flpHomeGroceries
             // 
-            this.flpHomeGroceries.AutoScroll = true;
-            this.flpHomeGroceries.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flpHomeGroceries.Location = new System.Drawing.Point(6, 27);
-            this.flpHomeGroceries.Name = "flpHomeGroceries";
-            this.flpHomeGroceries.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flpHomeGroceries.Size = new System.Drawing.Size(1154, 227);
-            this.flpHomeGroceries.TabIndex = 1;
-            this.flpHomeGroceries.WrapContents = false;
+            this.flpIngridients.AutoScroll = true;
+            this.flpIngridients.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flpIngridients.Location = new System.Drawing.Point(6, 27);
+            this.flpIngridients.Name = "flpHomeGroceries";
+            this.flpIngridients.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.flpIngridients.Size = new System.Drawing.Size(1154, 227);
+            this.flpIngridients.TabIndex = 1;
+            this.flpIngridients.WrapContents = false;
             // 
             // flpGroceries
             // 
@@ -162,6 +166,20 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // ContextMenuStripGrocery
+            // 
+            this.ContextMenuStripGrocery.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddGrocery});
+            this.ContextMenuStripGrocery.Name = "ContextMenuStripGrocery";
+            this.ContextMenuStripGrocery.Size = new System.Drawing.Size(181, 48);
+            // 
+            // btnAddGrocery
+            // 
+            this.btnAddGrocery.Name = "btnAddGrocery";
+            this.btnAddGrocery.Size = new System.Drawing.Size(180, 22);
+            this.btnAddGrocery.Text = "Dodaj namirnicu";
+            this.btnAddGrocery.Click += new System.EventHandler(this.btnAddIngridient);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -185,6 +203,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCreateGrocery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ContextMenuStripGrocery.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,9 +219,11 @@
         private System.Windows.Forms.Button btnCreateRecepie;
         private System.Windows.Forms.Button btnSearchRecepie;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.FlowLayoutPanel flpHomeGroceries;
+        private System.Windows.Forms.FlowLayoutPanel flpIngridients;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flpGroceries;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStripGrocery;
+        private System.Windows.Forms.ToolStripMenuItem btnAddGrocery;
     }
 }
 

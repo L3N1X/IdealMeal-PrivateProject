@@ -13,22 +13,31 @@ namespace IdealMeal_Lite
             InitializeComponent();
         }
 
+        //Kliknuti je login gumb
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //Kreiramo nekakvog korisnika. ako su upisani podaci jednaki ovome korisniku, pusti ga u aplikaciju
+            //kreiramo listu svih korisnika ove aplikacije
+            List<User> users = new List<User>();
+            User lucija = new User("Lucija Zidarić", "lucija", "1234");
+            User marta = new User("Marta Vlahek", "marta", "1234");
 
-            User user = new User("lucija", "lzidaric", "1234");
+            //Dodajemo ove korisnike
+            users.Add(lucija);
+            users.Add(marta);
+
             bool loginSucessful = false;
             //Dohvati vrijednosti iz tekstualih polja
             string username = this.txtUsername.Text;
             string password = this.txtPassword.Text;
-            //Ako je upisan tekst jednak ovim podacima, 
-            if(username == user.Username && password == user.Password)
-            {
-                //login je prosao
-                loginSucessful = true;
-            }
 
+            //Idemo kroz svakog korisnika i pokušavamo naći onog koji ima isto korisničko ime koje smo upisali i password, ako nađemo neki, korisnik se uspješno prijavio.
+            foreach (User user in users)
+            {
+                if(username == user.Username && password == user.Password)
+                {
+                    loginSucessful = true;
+                }
+            }
             /*
             
             mogli smo takoder
@@ -53,6 +62,11 @@ namespace IdealMeal_Lite
                 MainForm form = new MainForm();
                 //Iscrtaj je na ekran
                 form.Show();
+            }
+            //Ako je kriva kombinacija
+            else
+            {
+                MessageBox.Show("Korisničko ime ili lozinka su krivi");
             }
         }
     }
