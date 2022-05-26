@@ -12,9 +12,9 @@ namespace IdealMeal_Lite
 {
     public partial class MainForm : Form
     {
-        public List<Recepie> AllRecepies { get; set; }
-        public List<Grocery> AllGroceries { get; set; }
-        public List<Ingridient> SelectedIngridients { get; set; }
+        public List<Recepie> AllRecepies { get; set; } = new List<Recepie>();
+        public List<Grocery> AllGroceries { get; set; } = new List<Grocery>();
+        public List<Ingridient> SelectedIngridients { get; set; } = new List<Ingridient>(); 
         public MainForm()
         {
             //ovo je konstruktor naše glavne forme, on se odvrti samo jednom u životnom ciklusu aplikacije. 
@@ -72,16 +72,33 @@ namespace IdealMeal_Lite
             GroceryControl clickedGroceryControl = (GroceryControl)ContextMenuStripGrocery.SourceControl; //Ima svojstvo koje kaže "koja kontrola je bila kliknuta i mene je pozvala"
             Grocery clickedGrocery = clickedGroceryControl.Grocery; //vadimo namirnicu iz naše custom kontrole (GroceryControl u sebi sadrži namirnicu (Grocery))
             //Kreiramo formu za dodavanje sastojka, i pokazujemo je na ekran. Ne koristimo metodu show, već koristimo metodu ShowDialog, jer onda korisnik ne može kliknuti ništa izvan forme
-            AddIngridientForm dialog = new AddIngridientForm(clickedGrocery);
-            dialog.ShowDialog();
+            AddIngridientForm AddIngridientForm = new AddIngridientForm(clickedGrocery);
+            AddIngridientForm.ShowDialog();
             //Ako se sastojak kreirao, dodaj ga u popis sastojaka
-            if(dialog.Ingridient != null) //!= znači da "nije ne postojan"
+            if(AddIngridientForm.Ingridient != null) //!= znači da "nije ne postojan"
             {
-                Ingridient newIngridient = dialog.Ingridient;
+                Ingridient newIngridient = AddIngridientForm.Ingridient;
                 //Kreiramo kontrolu za sastojak, isto kako i imamo za namirnicu
                 IngridientControl ingridientControl = new IngridientControl(newIngridient);
                 //Dodajemo ju u panel sastojka koje imamo doma
                 flpIngridients.Controls.Add(ingridientControl);
+            }
+        }
+
+        private void pbCreateGrocery_Click(object sender, EventArgs e)
+        {
+            CreateGroceryForm createGroceryForm = new CreateGroceryForm();
+            createGroceryForm.ShowDialog();
+            //Ako se namirnica kreirala, dodaj je u popis namirnica
+            if (createGroceryForm.Grocery != null) //!= znači da "nije ne postojan"
+            {
+                Grocery newGrocery = createGroceryForm.Grocery;
+                //Kreiramo kontrolu za namrinicu, isto kako i imamo za sastojak
+                GroceryControl groceryControl = new GroceryControl(newGrocery);
+                //Dodjeljujemo joj kontrkstni izbornik
+                groceryControl.ContextMenuStrip = ContextMenuStripGrocery;
+                //Dodajemo ju u panel sastojka koje imamo doma
+                flpGroceries.Controls.Add(groceryControl);
             }
         }
 

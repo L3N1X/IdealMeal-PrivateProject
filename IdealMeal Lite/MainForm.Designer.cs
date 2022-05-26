@@ -125,12 +125,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Moje namrinice";
             // 
-            // flpHomeGroceries
+            // flpIngridients
             // 
             this.flpIngridients.AutoScroll = true;
             this.flpIngridients.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flpIngridients.Location = new System.Drawing.Point(6, 27);
-            this.flpIngridients.Name = "flpHomeGroceries";
+            this.flpIngridients.Name = "flpIngridients";
             this.flpIngridients.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flpIngridients.Size = new System.Drawing.Size(1154, 227);
             this.flpIngridients.TabIndex = 1;
@@ -156,6 +156,7 @@
             this.pbCreateGrocery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCreateGrocery.TabIndex = 8;
             this.pbCreateGrocery.TabStop = false;
+            this.pbCreateGrocery.Click += new System.EventHandler(this.pbCreateGrocery_Click);
             // 
             // pictureBox1
             // 
@@ -171,12 +172,12 @@
             this.ContextMenuStripGrocery.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAddGrocery});
             this.ContextMenuStripGrocery.Name = "ContextMenuStripGrocery";
-            this.ContextMenuStripGrocery.Size = new System.Drawing.Size(181, 48);
+            this.ContextMenuStripGrocery.Size = new System.Drawing.Size(163, 26);
             // 
             // btnAddGrocery
             // 
             this.btnAddGrocery.Name = "btnAddGrocery";
-            this.btnAddGrocery.Size = new System.Drawing.Size(180, 22);
+            this.btnAddGrocery.Size = new System.Drawing.Size(162, 22);
             this.btnAddGrocery.Text = "Dodaj namirnicu";
             this.btnAddGrocery.Click += new System.EventHandler(this.btnAddIngridient);
             // 
