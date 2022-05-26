@@ -59,10 +59,28 @@
     <Compile Include="CreateGroceryForm.Designer.cs">
       <DependentUpon>CreateGroceryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateRecepieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateRecepieForm.Designer.cs">
+      <DependentUpon>CreateRecepieForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroceryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroceryControl.Designer.cs">
+      <DependentUpon>GroceryControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Images.Designer.cs">
       <DependentUpon>Images.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="IngridientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IngridientControl.Designer.cs">
+      <DependentUpon>IngridientControl.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -84,9 +102,18 @@
     <EmbeddedResource Include="CreateGroceryForm.resx">
       <DependentUpon>CreateGroceryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateRecepieForm.resx">
+      <DependentUpon>CreateRecepieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroceryControl.resx">
+      <DependentUpon>GroceryControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngridientControl.resx">
+      <DependentUpon>IngridientControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
